@@ -1,8 +1,5 @@
-#include "ext.hh"
-
 namespace ext
 {
-
   /// Zip two lists
   //FIXME: Should accept any container
   std::list<std::tuple<>> zip() {

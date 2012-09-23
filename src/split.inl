@@ -1,5 +1,3 @@
-#include "ext.hh"
-
 namespace ext
 {
   /// Split a std::string
@@ -14,3 +12,5 @@ namespace ext
     return tokens;
   }
 }
+
+// -*- mode: c++-mode;

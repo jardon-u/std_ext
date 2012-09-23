@@ -7,8 +7,8 @@
 -include Makefile.rules
 
 PROJ=std_ext
-SRC=ends_with.cc println.cc read_file.cc split.cc s_unique.cc to_lower.cc zip.cc
-BIN=std_ext.so
+SRC=read_file.cc
+BIN=libstd_ext.so
 FILES=README.md # src
 
 # C++ only
@@ -22,15 +22,19 @@ $(BIN): $(OBJ) $(HDR)
 	$(CCXX) $(CFLAGS) -O3 $< -o obj/$@ -shared
 
 check:
-	echo "todo"
+	g++-4.7 check/main.cc -Wall -Wextra -Isrc -std=c++11 -lstd_ext -L. -o check/go
+	./check/go
 
 doc:
 	cat README.md
 
 clean:
 	rm -f $(BIN)
+	rm -f check/go
 	rm -f obj/*.o
 	rm -f .deps
+
+dist-clean: clean
 	rm -f Makefile.rules
 
 dist: clean todo AUTHORS svn_check
@@ -53,6 +57,12 @@ svn_check:
 todo:
 	grep "FIXME" -r . --exclude="Makefile" > TODO
 
-.PHONY: doc check
+.deps:
+	$(CCXX) -MM $(CFLAGS) $(SRC:%=src/%) > .deps
+
+.PHONY: doc check .deps
+
+-include .deps
+
 
 ### Makefile ends here

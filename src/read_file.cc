@@ -1,4 +1,4 @@
-#include "ext.hh"
+#include "ext"
 
 namespace ext
 {

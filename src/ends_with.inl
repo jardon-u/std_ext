@@ -1,8 +1,6 @@
-#include "ext.hh"
-
 namespace ext
 {
-  bool ends_with(const std::string& str, const std::string& ending)
+  inline bool ends_with(const std::string& str, const std::string& ending)
   {
     if (str.length() >= ending.length())
     {

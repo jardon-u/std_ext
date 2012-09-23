@@ -1,0 +1,34 @@
+// -*- c++ -*-
+
+#ifndef _EXT_HH
+# define _EXT_HH
+
+# include <iostream>
+# include <stdexcept>
+# include <algorithm>
+# include <iterator>
+# include <string>
+# include <list>
+# include <vector>
+# include <fstream>
+# include <sstream>
+
+
+namespace ext
+{
+  inline bool ends_with(const std::string& str, const std::string& ending);
+  inline std::string read_file(const std::string& fn);
+  inline std::string to_lower(const std::string& s);
+  inline void lower(std::string& s);
+  inline std::vector<std::string> split(const std::string& str);
+}
+
+#include "split.inl"
+#include "to_lower.inl"
+#include "ends_with.inl"
+#include "s_unique.hxx"
+#include "zip.hxx"
+#include "println.hxx"
+
+
+#endif /* _EXT_HH */

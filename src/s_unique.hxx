@@ -1,5 +1,3 @@
-#include "ext.hh"
-
 namespace ext
 {
   /// Sorted unique
