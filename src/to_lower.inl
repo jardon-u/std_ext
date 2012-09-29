@@ -1,3 +1,5 @@
+// -*- c++ -*-
+
 namespace ext
 {
   std::string to_lower(const std::string& s)
